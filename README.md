@@ -1,2 +1,30 @@
 # Spaceship-Titanic
-Spaceship Titanic
+
+In the year 2912, the Spaceship Titanic, an interstellar passenger liner, collided with a spacetime anomaly while en route to its destination. As a result, nearly half of its 13,000 passengers were transported to an alternate dimension. The challenge at hand is to leverage data science skills to predict which passengers were affected by the anomaly. The dataset, named "SpaceTitanicSurvivors," contains records recovered from the damaged computer system of the spaceship. Each passenger's information includes details like HomePlanet, CryoSleep status, Cabin, Destination, Age, VIP status, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, and the label indicating whether they were transported by the anomaly. The goal is to build machine learning models that accurately classify passengers based on this information, ultimately aiding rescue efforts and changing the course of history.
+
+The dataset consists of 8,693 rows and 14 columns, with each row representing a passenger's information. Columns include PassengerId, HomePlanet, CryoSleep, Cabin, Destination, Age, VIP, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, Name, and the binary label 'Transported.' The features capture diverse aspects such as the passenger's origin (HomePlanet), CryoSleep status, Cabin details, Destination, Age, VIP status, and various amenities usage. The 'Transported' label indicates whether a passenger was affected by the spacetime anomaly. The dataset is a mix of categorical and numerical features, requiring preprocessing and exploration to understand patterns and relationships within the data.
+
+Models
+
+<img width="349" alt="image" src="https://github.com/sandeep822/Spaceship-Titanic/assets/50867031/ee387366-e523-4a09-8a66-45ca7e0b0065">
+
+The classification results for various models are presented based on accuracy and a detailed classification report. The Logistic Regression model and the SVR model both achieved an accuracy of approximately 77%, with the former providing balanced precision and recall for classes 0 and 1, and the latter exhibiting slightly higher recall for class 1. The Gradient Boosting Classifier demonstrated the highest accuracy among the models, reaching around 78%, with well-balanced precision and recall for both classes. Interestingly, the second instance of Logistic Regression yielded identical results to the initial one. Overall, the models show reasonable performance, and the choice between them may depend on specific considerations such as precision, recall, or overall accuracy requirements.
+
+
+![image](https://github.com/sandeep822/Spaceship-Titanic/assets/50867031/9208109b-f4d0-4a7b-abeb-423c25f5b4c3)
+
+The ROC curves illustrate the trade-off between true positive rate (sensitivity) and false positive rate (1-specificity) across different models. Each curve represents a model's performance in distinguishing between classes, with a higher area under the curve (AUC) indicating better discrimination. In this case, the Gradient Boosting Classifier exhibits the highest AUC of 0.86, suggesting superior overall performance in correctly classifying instances. The Logistic Regression, SVR, and the repeated Logistic Regression models show comparable AUC values around 0.83. The closer the ROC curve is to the upper-left corner, the better the model's ability to discriminate between positive and negative instances. The random dashed line represents the performance expected from a random classifier. Overall, these ROC curves provide valuable insights into the models' classification performance and their ability to balance true positives and false positives across different decision thresholds.
+
+Confusion matrix
+
+![image](https://github.com/sandeep822/Spaceship-Titanic/assets/50867031/51b73b33-3ead-4c1f-863e-6dec3eecbb33)
+
+The confusion matrix for the Random Forest model is presented above, illustrating the model's performance across different classes. Each row corresponds to the true class, while each column represents the predicted class. The diagonal elements represent instances that were correctly classified, while off-diagonal elements indicate misclassifications. For Class 0, the model predicted 727 instances correctly, with 151 misclassifications as Class 1 and 238 misclassifications as Class 2. For Class 1, the model correctly predicted 623 instances, with 151 misclassifications as Class 0 and 238 misclassifications as Class 2. Finally, for Class 2, the model accurately predicted 238 instances, with 727 misclassifications as Class 0 and 623 misclassifications as Class 1. The confusion matrix provides a detailed breakdown of the model's predictive performance across different classes, offering insights into specific areas of strength and areas that may require improvement.
+
+Conclusion
+
+In conclusion, our analysis involved the development and evaluation of multiple machine learning models, including Random Forest, Gradient Boosting, AdaBoost, and an ensemble classifier, to predict the likelihood of passengers being transported. The preprocessing steps included handling missing values, encoding categorical variables, and feature scaling. The ensemble classifier, combining the strengths of Random Forest, Gradient Boosting, and AdaBoost, demonstrated promising performance with a Receiver Operating Characteristic Area Under the Curve (ROC AUC) of 0.86 on the validation set. The individual classifiers also showed strong discriminatory power, with ROC AUC values ranging from 0.85 to 0.86.
+
+The evaluation metrics on the validation set, including accuracy, precision, recall, and F1 score, further supported the effectiveness of the ensemble model. However, it's important to note that the problem's context and specific requirements may influence the choice of the final model. Regular updates and additional fine-tuning may enhance the model's generalization capabilities. Overall, the ensemble approach showcased robust predictive performance, indicating its potential utility for predicting passenger transport outcomes in the given scenario.
+
+
